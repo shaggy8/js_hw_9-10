@@ -6,8 +6,10 @@
 .jcarousel {
 	margin: 0 auto;
 	width: 640px;
+	height: 360px;
     position: relative;
     overflow: hidden;
+    border: 8px solid lightgreen;
 }
 
 .jcarousel ul {
@@ -20,4 +22,43 @@
 
 .jcarousel li {
     float: left;
+}
+
+.jcarousel-control {
+	display: block;
+	position: absolute;
+	top: 165px;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 30px;
+	color: black;
+	background: lightgreen;
+}
+
+.jcarousel-prev {
+	left: 2px;
+}
+
+.jcarousel-next {
+	right: 2px;
+}
+
+.jcarousel-pagination {
+	position: absolute;
+	bottom: 8px;
+}
+
+.jcarousel-pagination a {
+	display: inline-block;
+	margin: 3px;
+	width: 17px;
+	height: 17px;
+	border-radius: 8px;
+	background: lightgreen;
+	font-size: 0px;
+	text-decoration: none;
+	color: lightgreen;
 }
