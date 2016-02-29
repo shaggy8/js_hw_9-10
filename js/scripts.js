@@ -66,28 +66,72 @@ jQuery(function () {
 
 
 
-	$('#jqcheck1, #jqcheck2')
+	$('#jcheck1, #jcheck2')
 		.css({'display': 'none',})
 		.parent()
 		.addClass('jq-check');
 
-	var $spanCheck = $('.jq-check');
 
 		$('.jquery-check').mousedown(function(event) {
 		var $target = $(event.target);
-		// var checkId;
 
-		if (!($target.is('label')) || $target.is('span.jq-check'))
+		if ( !($target.is('label')) && !($target.is('.jq-check')) )
 			return;
 
-		if ($target.is('label')) {
-			checkId = '#' + $target.attr('for');
-		}
+		var $input;
 
-		if ($(checkId).prop('checked')) {
-			$(checkId).parent().css({'background-position': ''});
-		} else {
-			$(checkId).parent().css({'background-position': '0 17px'});
+		if ($target.is('label')) {
+			$input = $('#' + $target.attr('for'));
+			if ($input.prop('checked')) {
+				$input.parent().css({'background-position': ''});
+			} else {
+				$input.parent().css({'background-position': '0 -17px'});
+			}
+		};
+
+		if ($target.is('.jq-check')) {
+			$input = $target.find('input');
+			if ($input.prop('checked')) {
+				$input.parent().css({'background-position': ''});
+				$input.prop('checked', false);
+			} else {
+				$input.parent().css({'background-position': '0 -17px'});
+				$input.prop('checked', true);
+			}
+		};
+	});
+
+
+
+	$('.checkit').click(function(event) {
+		event.preventDefault();
+		var like = {
+			'j1': $('#jcheck1').prop('checked'),
+			'j2': $('#jcheck2').prop('checked'),
+			's1': $('#scheck1').prop('checked'),
+			's2': $('#scheck2').prop('checked'),
+		};
+
+		var testing = 0;
+		for (var key in like) testing += like[key];
+
+		if (testing > 2) {
+			alert('Розберіться що вам подобається, і не тицяйте все підряд!!!');
+			return;
+		}
+		if (like.j1 && like.s1) {
+			alert('Вам дуже подобається ');
+			return;
+		}
+		if (like.j1 || like.s1) {
+			alert('Вам подобається ');
+		}
+		if (like.j2 && like.s2) {
+			alert('Вам зовсім не до смаку ');
+			return;
+		}
+		if (like.j2 || like.s2) {
+			alert('Вам не подобається ');
 		}
 	});
 

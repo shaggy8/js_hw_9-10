@@ -78,10 +78,11 @@ form {
 	width: 640px;
 }
 
-.jquery-check {
-	margin: 5% 3% 5% 0;
+.check {
+	display: inline-block;
+	margin: 5% 1% 5% 1%;
 	padding: 8px;
-	width: 48%;
+	width: 44%;
 	border-radius: 15px;
 }
 
@@ -95,18 +96,51 @@ dt {
 }
 
 label {
+	cursor: pointer;
 	font-family: Arial, sans-serif;
 	font-style: italic;
 }
 
 input[type=checkbox] {
+	cursor: pointer;
 	width: 17px;
 	height: 17px;
 }
 
-span.jq-check {
+.jq-check {
+	cursor: pointer;
 	display: inline-block;
 	width: 17px;
 	height: 17px;
 	background: url(../pic/checkbox.png);
+}
+
+#scheck1, #scheck2 {
+	display: none;
+}
+
+.scheck {
+	display: block;
+	margin: 5%;
+	width: 65%;
+}
+
+.scheck:after {
+	content: "";
+	float: right;
+	width: 17px;
+	height: 17px;
+	background: url(../pic/checkbox.png);
+}
+
+input[type=checkbox]:checked + .scheck:after{
+	background-position: 0 -17px;
+}
+
+.checkit {
+	width: 188px;
+	height: 26px;
+	border: none;
+	background: lightgreen;
+	font-weight: bold;
 }
