@@ -3,6 +3,10 @@
 	padding: 0;
 }
 
+body {
+	background-color: lightyellow;
+}
+
 .jcarousel {
 	margin: 0 auto;
 	width: 640px;
@@ -12,7 +16,7 @@
     border: 8px solid lightgreen;
 }
 
-.jcarousel ul {
+.jcarousel-list {
     width: 20000em;
     position: relative;
     list-style: none;
@@ -20,7 +24,7 @@
     padding: 0;
 }
 
-.jcarousel li {
+.jcarousel-item {
     float: left;
 }
 
@@ -30,12 +34,15 @@
 	top: 165px;
 	width: 30px;
 	height: 30px;
+	opacity: 0.75;
 	border-radius: 15px;
 	text-decoration: none;
 	text-align: center;
 	font-size: 30px;
+	line-height: 26px;
 	color: black;
 	background: lightgreen;
+	box-shadow: 0 0 2px #F0EFE7;
 }
 
 .jcarousel-prev {
@@ -49,6 +56,7 @@
 .jcarousel-pagination {
 	position: absolute;
 	bottom: 8px;
+	opacity: 0.75;
 }
 
 .jcarousel-pagination a {
@@ -57,8 +65,48 @@
 	width: 17px;
 	height: 17px;
 	border-radius: 8px;
+	box-shadow: 0 0 2px #F0EFE7;
 	background: lightgreen;
 	font-size: 0px;
 	text-decoration: none;
 	color: lightgreen;
+}
+
+form {
+	margin: 0 auto;
+	padding: 26px;
+	width: 640px;
+}
+
+.jquery-check {
+	margin: 5% 3% 5% 0;
+	padding: 8px;
+	width: 48%;
+	border-radius: 15px;
+}
+
+dt, dd {
+	margin: 3%;
+	display: inline-block;
+}
+
+dt {
+	width: 50%;
+}
+
+label {
+	font-family: Arial, sans-serif;
+	font-style: italic;
+}
+
+input[type=checkbox] {
+	width: 17px;
+	height: 17px;
+}
+
+span.jq-check {
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	background: url(../pic/checkbox.png);
 }

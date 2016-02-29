@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/jquery.selectbox.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="js/jquery.jcarousel.min.js"></script>
+	<script src="js/jquery.selectbox-0.2.min.js"></script>
 	<script src="js/scripts.js"></script>
 </head>
 <body>
@@ -16,9 +18,37 @@
 			<li class="jcarousel-item"><img src="pic/image-398e3b790cbdddd444150aaa28f021fe51706e27e6cb964b181d809907ce4db3-V.jpg" alt="photo"></li>
 			<li class="jcarousel-item"><img src="pic/image-307c2bdebfe65a829a32e9361e8909edf835c1b9a206a4db6509b57fff0a7339-V.jpg" alt="photo"></li>
 		</ul>
-		<a class="jcarousel-control jcarousel-prev" href="#"><</a>
-		<a class="jcarousel-control jcarousel-next" href="#">></a>
+		<a class="jcarousel-control jcarousel-prev" href="#">‹</a>
+		<a class="jcarousel-control jcarousel-next" href="#">›</a>
 		<div class="jcarousel-pagination"></div>
 	</div>
+
+	<form action="">
+		<select name="flowers" id="flowers">
+			<option value="select">Виберіть квітку</option>
+			<option value="hedera">Плющ</option>
+			<option value="orchid">Орхідея</option>
+			<option value="ficus">Фікус</option>
+			<option value="senpolia">Фіалка</option>
+			<option value="mirt">Мирт</option>
+			<option value="azalia">Азалія</option>
+		</select>
+		<fieldset class="jquery-check">
+			<dl>
+				<dt>
+					<label for="jqcheck1" class="jqcheck">Подобається</label>
+				</dt>
+				<dd>
+					<span><input id="jqcheck1" type="checkbox"></span>
+				</dd>
+				<dt>
+					<label for="jqcheck2" class="jqcheck">Не подобається</label>
+				</dt>
+				<dd>
+					<span><input id="jqcheck2" type="checkbox"></span>
+				</dd>
+			</dl>
+		</fieldset>
+	</form>
 </body>
 </html>
