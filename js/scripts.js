@@ -1,17 +1,23 @@
 jQuery(function () {
 
-	$('.dropdown').mouseenter(function(event) {
-		var $target = $(event.target);
-		$target.find('.submenu:eq(0)').show('fast');
+	$('.dropdown').mouseenter(function() {
+		$(this).find('.submenu:eq(0)')
+		.stop(true, true)
+		.show('normal');
+
+		$('.main-menu, .submenu')
+		.animate({'background-color': '#90EE90',}, {'duration': 1000, 'queue': 'x'})
+		.dequeue('x');
 	});
 
-	$('.dropdown').mouseleave(function(event) {
-		var $target = $(event.target);
-		$target.find('.submenu:eq(0)').hide('fast');
-	});
+	$('.dropdown').mouseleave(function() {
+		$(this).find('.submenu:eq(0)')
+		.stop(true, true)
+		.hide('normal');
 
-	$('.main-menu').mouseleave(function(event) {
-		$('.submenu').hide('fast');
+		$('.main-menu, .submenu')
+		.animate({'background-color': '#FF8822',}, {'duration': 1000, 'queue': 'x'})
+		.dequeue('x');
 	});
 
 
