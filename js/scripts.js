@@ -1,5 +1,21 @@
 jQuery(function () {
 
+	$('.dropdown').mouseenter(function(event) {
+		var $target = $(event.target);
+		$target.find('.submenu:eq(0)').show('fast');
+	});
+
+	$('.dropdown').mouseleave(function(event) {
+		var $target = $(event.target);
+		$target.find('.submenu:eq(0)').hide('fast');
+	});
+
+	$('.main-menu').mouseleave(function(event) {
+		$('.submenu').hide('fast');
+	});
+
+
+
 	$('.jcarousel').jcarousel({
 			wrap: 'both',
 			center: true,
@@ -112,27 +128,33 @@ jQuery(function () {
 			's2': $('#scheck2').prop('checked'),
 		};
 
+		var flower = $('#flowers').val();
 		var testing = 0;
 		for (var key in like) testing += like[key];
 
-		if (testing > 2) {
+		if (flower == 'select') {
+			alert('Спочатку виберіть квітку');
+		}
+		else if (testing == 0) {
+			alert('Натицяйте "Подобається" чи "Не подобається" відповідно до вашого смаку');
+		}
+		else if (testing > 2) {
 			alert('Розберіться що вам подобається, і не тицяйте все підряд!!!');
-			return;
 		}
-		if (like.j1 && like.s1) {
-			alert('Вам дуже подобається ');
-			return;
+		else if (like.j1 && like.s1) {
+			alert('Вам надзвичайно подобається ' + flower);
 		}
-		if (like.j1 || like.s1) {
-			alert('Вам подобається ');
+		else if (!(like.j2 || like.s2) && (like.j1 || like.s1)) {
+			alert('Вам подобається ' + flower);
 		}
-		if (like.j2 && like.s2) {
-			alert('Вам зовсім не до смаку ');
-			return;
+		else if (like.j2 && like.s2) {
+			alert('Вам зовсім не до смаку ' + flower);
 		}
-		if (like.j2 || like.s2) {
-			alert('Вам не подобається ');
-		}
+		else if (!(like.j1 || like.s1) && (like.j2 || like.s2)) {
+			alert('Вам не подобається ' + flower);
+		} else {
+			alert('Розберіться що вам подобається, і не тицяйте все підряд!!!');
+		};
 	});
 
 

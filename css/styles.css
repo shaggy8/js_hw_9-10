@@ -7,6 +7,60 @@ body {
 	background-color: lightyellow;
 }
 
+/*MAIN  MENU*/
+/*MAIN  MENU*/
+/*MAIN  MENU*/
+
+.main-menu {
+	margin: 1% auto;
+	padding: 0 15%;
+	height: 50px;
+	background: #f82;
+	list-style: none;
+	font-family: Arial, sans-serif;
+	font-size: 26px;
+}
+
+.main-menu a {
+	text-decoration: none;
+	color: black;
+	line-height: 50px;
+}
+
+.main-menu li {
+	position: relative;
+	padding: 0 20px 0 25px;
+	width: 140px;
+	display: inline-block;
+}
+
+.main-menu li:hover {
+	background: yellow;
+}
+
+li.dropdown > a {
+	text-decoration: underline;
+}
+
+.submenu {
+	position: absolute;
+	left: 0;
+	top: 44px;
+	display: none;
+	background: #f82;
+	list-style: none;
+	z-index: 5;
+}
+
+.deeper-submenu {
+	top: 0;
+	left: 185px;
+}
+
+/*JCAROUSEL*/
+/*JCAROUSEL*/
+/*JCAROUSEL*/
+
 .jcarousel {
 	margin: 0 auto;
 	width: 640px;
@@ -71,6 +125,10 @@ body {
 	text-decoration: none;
 	color: lightgreen;
 }
+
+/*FORM*/
+/*FORM*/
+/*FORM*/
 
 form {
 	margin: 0 auto;
