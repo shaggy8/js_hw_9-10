@@ -1,20 +1,35 @@
 jQuery(function () {
 
+	var closer;
+
 	$('.dropdown').mouseenter(function() {
+		clearTimeout(closer);
+
 		$(this).find('.submenu:eq(0)')
 		.stop(true, true)
 		.show('normal');
+	});
 
+
+	$('.dropdown').mouseleave(function() {
+		var $this = $(this);
+
+		closer = setTimeout(function() {
+			$this.find('.submenu:eq(0)')
+			.stop(true, true)
+			.hide('normal');
+		}, 400);
+	});
+
+
+	$('.main-menu').mouseenter(function() {
 		$('.main-menu, .submenu')
 		.animate({'background-color': '#90EE90',}, {'duration': 1000, 'queue': 'x'})
 		.dequeue('x');
 	});
 
-	$('.dropdown').mouseleave(function() {
-		$(this).find('.submenu:eq(0)')
-		.stop(true, true)
-		.hide('normal');
 
+	$('.main-menu').mouseleave(function() {
 		$('.main-menu, .submenu')
 		.animate({'background-color': '#FF8822',}, {'duration': 1000, 'queue': 'x'})
 		.dequeue('x');

@@ -135,6 +135,10 @@ form {
 	width: 640px;
 }
 
+#flowers {
+	display: block;
+}
+
 legend {
 	font-family: Arial, sans-serif;
 	font-size: 14px;
@@ -175,7 +179,7 @@ input[type=checkbox] {
 	display: inline-block;
 	width: 17px;
 	height: 17px;
-	background: url(../pic/checkbox.png);
+	background: url(../img/checkbox.png);
 }
 
 #scheck1, #scheck2 {
@@ -193,7 +197,7 @@ input[type=checkbox] {
 	float: right;
 	width: 17px;
 	height: 17px;
-	background: url(../pic/checkbox.png);
+	background: url(../img/checkbox.png);
 }
 
 input[type=checkbox]:checked + .scheck:after{
